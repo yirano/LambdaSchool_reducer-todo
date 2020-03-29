@@ -7,8 +7,14 @@ let initialState = {
 }
 
 function reducer(state, action) {
-  console.log("reducer");
-  return state;
+  switch (action.type) {
+    case 'ADD':
+      return console.log("ADD")
+    case 'DELETE':
+      return console.log("DELETE")
+    default:
+      return console.log("DEFAULT?")
+  }
 }
 
 export default { reducer, initialState }
