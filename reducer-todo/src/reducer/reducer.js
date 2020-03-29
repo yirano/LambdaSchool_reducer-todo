@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 let initialState = {
   tasks: [
@@ -10,14 +10,15 @@ let initialState = {
   ]
 }
 
+
 function reducer(state, action) {
   switch (action.type) {
     case 'ADD':
-      return { tasks: [...state.tasks, { item: "a new task", id: Date.now(), completed: false }] }
+      return { tasks: [...state.tasks, { item: action.payload, id: Date.now(), completed: false }] }
     case 'DELETE':
       return console.log("DELETE")
     default:
-      return console.log("DEFAULT?")
+      console.log("Default case/switch");
   }
 }
 
