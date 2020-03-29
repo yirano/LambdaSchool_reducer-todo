@@ -7,11 +7,11 @@ const TodoCard = (props) => {
     <div>
       {tasks.map(todo => {
         return (
-          <>
+          <div className="todoCard" id={todo.id}>
             <h4>{todo.item}</h4>
             <p>{JSON.stringify(todo.completed)}</p>
-            <button onClick={(e) => props.handleDelete(e)}>Delete</button>
-          </>
+            <button id={todo.id} onClick={(e) => props.handleDelete(e)}>Delete</button>
+          </div>
         )
       })}
     </div>

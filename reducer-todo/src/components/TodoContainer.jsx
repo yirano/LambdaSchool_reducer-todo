@@ -19,7 +19,7 @@ export default function TodoContainer() {
   }
 
   function handleDelete(e) {
-    dispatch({ type: 'DELETE' })
+    dispatch({ type: 'DELETE', payload: e.target.id })
   }
 
   return (

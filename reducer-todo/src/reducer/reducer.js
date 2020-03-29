@@ -16,9 +16,13 @@ function reducer(state, action) {
     case 'ADD':
       return { tasks: [...state.tasks, { item: action.payload, id: Date.now(), completed: false }] }
     case 'DELETE':
-      return console.log("DELETE")
+      return {
+        tasks: state.tasks.filter(task => {
+          return Number(task.id) !== Number(action.payload);
+        })
+      };
     default:
-      console.log("Default case/switch");
+      return console.log("Default case/switch");
   }
 }
 
