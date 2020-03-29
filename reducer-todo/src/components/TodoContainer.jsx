@@ -6,7 +6,7 @@ import Form from './Form'
 export default function TodoContainer() {
   const { initialState, reducer } = red.default;
   const [state, dispatch] = useReducer(reducer, initialState)
-
+  console.log('state from container', state);
   function handleSubmit(e) {
     e.preventDefault();
     dispatch({ type: 'ADD' })
@@ -18,7 +18,7 @@ export default function TodoContainer() {
   return (
     <div>
       <Form handleSubmit={handleSubmit} />
-      <TodoCard initialState={initialState} handleDelete={handleDelete} />
+      <TodoCard state={state} handleDelete={handleDelete} />
     </div>
   )
 }

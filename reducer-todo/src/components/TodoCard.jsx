@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const TodoCard = (props) => {
-  console.log(props.initialState);
-  const { tasks } = props.initialState
+  const { tasks } = props.state
+  console.log(tasks);
   return (
     <div>
       {tasks.map(todo => {
