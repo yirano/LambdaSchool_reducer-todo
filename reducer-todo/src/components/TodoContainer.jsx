@@ -10,12 +10,15 @@ export default function TodoContainer() {
   function handleSubmit(e) {
     e.preventDefault();
     dispatch({ type: 'ADD' })
-    console.log("handleSubmit");
+  }
+
+  function handleDelete(e) {
+    dispatch({ type: 'DELETE' })
   }
   return (
     <div>
       <Form handleSubmit={handleSubmit} />
-      <TodoCard />
+      <TodoCard initialState={initialState} handleDelete={handleDelete} />
     </div>
   )
 }

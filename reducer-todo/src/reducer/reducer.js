@@ -1,10 +1,10 @@
 import React from 'react'
 
-let initialState = {
+let initialState = [{
   item: 'Learn about reducers',
   completed: false,
   id: new Date()
-}
+}]
 
 function reducer(state, action) {
   switch (action.type) {

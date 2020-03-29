@@ -1,9 +1,18 @@
 import React from 'react'
 
-const TodoCard = () => {
+const TodoCard = (props) => {
+  console.log(props.initialState);
   return (
     <div>
-      <h1>THIS IS A TODOCARD BEING RENDERED FROM THE TODOCONTAINER</h1>
+      {props.initialState.map(todo => {
+        return (
+          <>
+            <h4>{todo.item}</h4>
+            <p>{JSON.stringify(todo.completed)}</p>
+            <button onClick={(e) => props.handleDelete(e)}>Delete</button>
+          </>
+        )
+      })}
     </div>
   )
 }
