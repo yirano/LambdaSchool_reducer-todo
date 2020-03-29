@@ -2,9 +2,10 @@ import React from 'react'
 
 const TodoCard = (props) => {
   console.log(props.initialState);
+  const { tasks } = props.initialState
   return (
     <div>
-      {props.initialState.map(todo => {
+      {tasks.map(todo => {
         return (
           <>
             <h4>{todo.item}</h4>
