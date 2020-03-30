@@ -23,9 +23,11 @@ export default function TodoContainer() {
   }
 
   function handleComplete(e) {
-    console.log(state.tasks);
-    state.tasks.map(task => { return task.completed = task.id == e.target.id ? !task.completed : task.completed })
-    dispatch({ type: 'DONE', payload: state.tasks })
+    // console.log(state.tasks);
+    // state.tasks.map(task => { return task.completed = task.id == e.target.id ? !task.completed : task.completed })
+    // dispatch({ type: 'DONE', payload: state.tasks })
+
+    dispatch({ type: 'DONE', payload: e.target.id })
   }
 
 
