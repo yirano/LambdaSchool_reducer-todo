@@ -6,6 +6,11 @@ let initialState = {
       item: 'Learn about reducers',
       completed: false,
       id: Date.now()
+    },
+    {
+      item: "Laundry",
+      completed: true,
+      id: Date.now() + 1
     }
   ]
 }
@@ -15,10 +20,12 @@ function reducer(state, action) {
   switch (action.type) {
     case 'ADD':
       return { tasks: [...state.tasks, { item: action.payload, id: Date.now(), completed: false }] }
-    case 'DELETE':
+    case 'DONE':
+      return { tasks: [...action.payload] }
+    case 'CLEAR':
       return {
         tasks: state.tasks.filter(task => {
-          return Number(task.id) !== Number(action.payload);
+          return task.completed === false;
         })
       };
     default:
