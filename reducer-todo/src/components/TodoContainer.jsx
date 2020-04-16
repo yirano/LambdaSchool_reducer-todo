@@ -7,7 +7,7 @@ export default function TodoContainer() {
 
   const { initialState, reducer } = red.default;
   const [state, dispatch] = useReducer(reducer, initialState)
-  const [input, setInput] = useState()
+  const [input, setInput] = useState('')
   function handleChange(e) {
     setInput(e.target.value)
   }

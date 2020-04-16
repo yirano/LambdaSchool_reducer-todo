@@ -1,4 +1,10 @@
 import React from 'react'
+import moment from 'moment'
+import styled from 'styled-components'
+
+const StyledCard = styled.div`
+  border-bottom: 1px solid #555;
+`
 
 const TodoCard = (props) => {
   const { tasks } = props.tasks
@@ -7,11 +13,12 @@ const TodoCard = (props) => {
     <div>
       {tasks.map(todo => {
         return (
-          <div className="todoCard" id={todo.id} >
+          <StyledCard className="todoCard" id={todo.id} >
             <h4>{todo.item}</h4>
             <p>Completed: {JSON.stringify(todo.completed)}</p>
             <button id={todo.id} onClick={e => props.handleComplete(e)}>DONE</button>
-          </div>
+            <p>{todo.date_posted}</p>
+          </StyledCard>
         )
       })}
     </div>

@@ -32,9 +32,11 @@ export default function Form(props) {
     <StyledFormContainer>
       <StyledForm onSubmit={(e) => props.handleSubmit(e)}>
         <StyledInput type="text" placeholder="Add a task" onChange={(e) => props.handleChange(e)} value={props.input} />
-        <StyledButton onSubmit={(e) => props.handleSubmit(e)}>Submit</StyledButton>
+        <StyledButton
+          disabled={props.input.trim() === '' ? true : false}
+          onSubmit={(e) => props.handleSubmit(e)}>Submit</StyledButton>
       </StyledForm>
-      <StyledButton onClick={(e) => props.handleClear(e)}>Clear Completed</StyledButton>
+      <StyledButton onClick={(e) => props.handleClear(e)} >Clear Completed</StyledButton>
     </StyledFormContainer>
   )
 }
