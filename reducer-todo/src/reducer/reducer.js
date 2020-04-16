@@ -5,12 +5,12 @@ let initialState = {
     {
       item: 'Learn about reducers',
       completed: false,
-      id: Date.now()
+      id: 1
     },
     {
       item: "Laundry",
       completed: true,
-      id: Date.now() + 1
+      id: 2
     }
   ]
 }
