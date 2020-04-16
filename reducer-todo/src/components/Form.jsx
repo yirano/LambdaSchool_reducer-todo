@@ -1,13 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const StyledForm = styled.form`
+const StyledFormContainer = styled.div`
   display: flex;
   justify-content: center;
 `
 
+const StyledForm = styled.form`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+`
+
 const StyledInput = styled.input`
-  width: 70%;
+  width: 100%;
   border: none;
   border-bottom: 1px solid #555555;
   outline: none;
@@ -16,19 +22,19 @@ const StyledInput = styled.input`
 `
 
 const StyledButton = styled.button`
-    height: 30px;
     border: 1px solid #555;
     padding: 8px 12px;
+    width: 90px;
 `
 
 export default function Form(props) {
   return (
-    <div>
+    <StyledFormContainer>
       <StyledForm onSubmit={(e) => props.handleSubmit(e)}>
         <StyledInput type="text" placeholder="Add a task" onChange={(e) => props.handleChange(e)} value={props.input} />
         <StyledButton onSubmit={(e) => props.handleSubmit(e)}>Submit</StyledButton>
       </StyledForm>
       <StyledButton onClick={(e) => props.handleClear(e)}>Clear Completed</StyledButton>
-    </div>
+    </StyledFormContainer>
   )
 }
