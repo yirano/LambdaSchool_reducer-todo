@@ -29,12 +29,12 @@ function reducer(state, action) {
     case 'CLEAR':
       return {
         tasks: state.tasks.filter(task => {
-          return task.completed === false;
+          return task.completed === false
         })
-      };
+      }
 
     default:
-      return console.log("Default case/switch error");
+      return state
   }
 }
 
